@@ -238,6 +238,7 @@ let Fifteen = new Room(
 export default class GameSpace {
   constructor () {
     this.rooms = [Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve, Thirteen, Fourteen, Fifteen];
+    this.startLocation = 12;
   }
 }
 //module.exports = rooms;

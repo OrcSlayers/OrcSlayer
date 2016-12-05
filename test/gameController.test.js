@@ -2,6 +2,7 @@
 const { assert } = chai;
 import Player from '../src/models/player';
 import Room from '../src/models/room';
+import GameSpace from '../src/models/game-space';
 
 describe.skip ( 'gameController', () => {
 
@@ -56,20 +57,20 @@ describe ('gameController test2', () => {
 
   beforeEach(angular.mock.module('controllers'));
 
-  let $controller, $scope, gc, player;
+  let $controller, gc, map, player;
 
-  beforeEach(angular.mock.inject(function($rootScope, _$controller_) {
-    $scope = $rootScope.$new();
+  beforeEach(angular.mock.inject(function(_$controller_) {
+    // $scope = $rootScope.$new();
     $controller = _$controller_;
-    gc = $controller('gameController', { $scope });
+    gc = $controller('gameController', { });
   }));
 
   it ('should move player from room to room', () => {
     // create two rooms; put player in 1 and move to 2
-    $scope.rooms = [
+    map = new GameSpace(
       new Room('Room 0', null, null, 1, null, null, null),
       new Room('Room 1', null, null, null, null, 0, null)
-    ];
+    );
     player = new Player(0);
     gc.move('N');
     assert.equal(player.room, 1);

@@ -13,4 +13,8 @@ export default class Player {
     this.room = room;
     this.item = { name: null, strength: null, text: null };
   }
+
+  setLocation(loc) {
+    this.room = loc;
+  }
 }
