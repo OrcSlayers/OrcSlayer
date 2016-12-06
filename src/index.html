@@ -33,10 +33,10 @@
          <p id="player-life">Player Life: {{gc.life}}</p>
       </span>
       <span id="direction-ctrl" ng-show="gc.moveButtons">
-        <button id="n-btn" class="direction-button" ng-click="gc.move('N')">North</button>
-        <button id="e-btn" class="direction-button" ng-click="gc.move('E')">East</button>
-        <button id="s-btn" class="direction-button" ng-click="gc.move('S')">South</button>
-        <button id="w-btn" class="direction-button" ng-click="gc.move('W')">West</button>
+        <input type="image" src="north.gif" id="n-btn" class="direction-button" ng-click="gc.move('N')">
+        <input type="image" src="east.gif" id="e-btn" class="direction-button" ng-click="gc.move('E')">
+        <input type="image" src="south.gif" id="s-btn" class="direction-button" ng-click="gc.move('S')">
+        <input type="image" src="west.gif" id="w-btn" class="direction-button" ng-click="gc.move('W')">
       </span>
     </div>
       <div class="sub-content" id="game-over-page" ng-show="gc.gameOver">

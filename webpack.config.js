@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -12,7 +13,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('main.css'),
+    new CopyWebpackPlugin([{from: './src/images'}])
   ],
   devtool: 'source-map',
   module: {
@@ -35,6 +37,9 @@ module.exports = {
     }, {
       test: /\.css/,
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+    }, {
+      test: /\.gif/,
+      loader: 'file-loader'
     }]
   }
 };
