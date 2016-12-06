@@ -39,19 +39,17 @@
         <input type="image" src="west.gif" id="w-btn" class="direction-button" ng-click="gc.move('W')">
       </span>
     </div>
-      <div class="sub-content" id="game-over-page" ng-show="gc.gameOver">
-    <h1>{{gc.ending}}</h1>
-    <h2>You survived {{gc.progress}} rooms of the dungeon.</h2>
-    <button id="play-btn" ng-click="gc.newGame();">Play Again</button>
-  </div>
+    <div class="sub-content" id="game-over-page" ng-show="gc.gameOver">
+      <h1>{{gc.ending}}</h1>
+      <h2>You survived {{gc.progress}} rooms of the dungeon.</h2>
+      <button id="play-btn" ng-click="gc.newGame();">Play Again</button>
+    </div>
   </div>
   <div class="tab-content" id="instruction-page" ng-show="activeTab.showInstructions">
     <h1>Instructions</h1>
     <p>Instructions will go here.</p>
     <button id="play-btn" ng-click="activeTab = { showIntro: false, showInstructions: false, showGame: true };">Play</button>
   </div>
-
-
 
   <div class="static" id="footer">
     <copy>The Orc Slayers 2016 <br> Mark Greenwood, Michelle Sri, Mugsy Carter</copy>
